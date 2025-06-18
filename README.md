@@ -16,6 +16,7 @@ Description
 This function reads clinical, CNA, proteomics, metabolomics, and RNA-seq data, preprocesses and matches samples, and then runs the iPhenMAP model.
 
 Usage
+
 iphen(
   D,
   X,
