@@ -5,4 +5,4 @@ Integrated PhenMap
 
 install.packages("devtools")
 
-devtools::install_github("syspremed/iPhenMap"
+devtools::install_github("syspremed/iPhenMap)
