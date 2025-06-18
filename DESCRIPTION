@@ -1,0 +1,11 @@
+Package: iPhenMap
+Title: What the Package Does (One Line, Title Case)
+Version: 2.0
+Authors@R: 
+    person("Gift", "Nyamundanda", , "anguraj.sadanandam@icr.ac.uk", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: This package includes a new method to integrated multiomics + phenomics.
+License: NoCommercialUse + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
