@@ -35,6 +35,8 @@ iphen(
   time = NULL,
   status = NULL
 )
+
+
 Arguments
 q	
 Number of latent variables (default 10)
