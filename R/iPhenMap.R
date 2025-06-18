@@ -1,4 +1,4 @@
-## Iphen.R
+## iPhenMap.R
 # Wrapper function to load data, preprocess, and run iPhenMAP analysis
 
 #' Run iPhenMAP Analysis
