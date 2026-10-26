@@ -1,4 +1,4 @@
-# iPhenMap
+# iPhenMap from the Sadanandam Lab at the ICR, London
 Integrated PhenMap
 
 This tool integrates multiomics with phenomics data
