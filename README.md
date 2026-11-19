@@ -9,7 +9,7 @@ Integrative Phenotype Mapping (iPhenMap) maximizes information shared between an
 
 install.packages("devtools")
 
-devtools::install_github("syspremed/iPhenMap)
+devtools::install_github("syspremed/iPhenMap")
 
 Run iPhenMAP Analysis
 Description

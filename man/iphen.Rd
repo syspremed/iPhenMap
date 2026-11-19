@@ -20,22 +20,44 @@ iphen(
   scaleType = "unit",
   iniType = "EVD",
   time = NULL,
-  status = NULL
+  status = NULL,
+  seed = 123,
+  pathway = TRUE
 )
 }
 \arguments{
-\item{q}{Number of latent variables (default 10)}
+\item{D}{Named list of omics data matrices (samples in rows, features in
+columns), one per platform, with rows matched across platforms.}
 
-\item{mcmc}{Number of MCMC iterations (default 100000)}
+\item{X}{Matrix of phenotypes/covariates (samples in rows), matched to \code{D}.}
 
-\item{data_dir}{Path to the parent data directory containing subfolders: Clinical, CNA, Proteomics, Metabolomics, RNAseq.}
+\item{q}{Initial number of latent variables (default 10).}
 
-\item{...}{Additional parameters passed to \code{iphen} (g, c, d, nu0, Sigo, s2o, nu0k, noiseMod, scaleType, iniType, time, status)}
+\item{mcmc}{Number of MCMC iterations (default 10000); should be a multiple of 1250.}
+
+\item{g, c, d, nu0, Sigo, s2o, nu0k}{Prior hyperparameters.}
+
+\item{noiseMod}{Noise model: "unique" (per feature) or per-platform otherwise.}
+
+\item{scaleType}{Scaling: "unit", "pareto", "view", "overall" or "none".}
+
+\item{iniType}{Initialisation: "EVD", "SVD" or random otherwise.}
+
+\item{time, status}{Optional survival time and event status for prognosis analyses.}
+
+\item{seed}{Random seed for the MCMC sampler and downstream SAM/PAM/mclust
+steps (default 123, the previous hard-coded value). Use different seeds to
+run independent chains; \code{NULL} leaves the caller's RNG state untouched.}
+
+\item{pathway}{Run Reactome pathway enrichment per MV (default \code{TRUE}).
+This step dominates runtime; set \code{FALSE} for quick or repeated runs.}
 }
 \value{
-Saves results in "iPhenMAPresults" and returns the final MCMC output list.
+Invisibly, the list of MCMC samples (also saved to
+"iPhenMAPresults/MCMCsamples/iPhenMAP-mcmcSamples.RData").
 }
 \description{
-This function reads clinical, CNA, proteomics, metabolomics, and RNA-seq data,
-preprocesses and matches samples, and then runs the iPhenMAP model.
+Fits the iPhenMAP model to sample-matched multiomics data and phenotypes,
+then writes diagnostics, loadings, phenotype effects, clustering and
+(optionally) survival results to "iPhenMAPresults" in the working directory.
 }
